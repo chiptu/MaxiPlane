@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  arrivalDate: 2021-06-30
+  departureDate: 2021-06-30
+  arrivalAirport: MyString
+  departureAirport: MyString
+  nbPlaceEco: 1
+  nbPlacePremium: 1
+
+two:
+  arrivalDate: 2021-06-30
+  departureDate: 2021-06-30
+  arrivalAirport: MyString
+  departureAirport: MyString
+  nbPlaceEco: 1
+  nbPlacePremium: 1
