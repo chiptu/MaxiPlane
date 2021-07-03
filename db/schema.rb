@@ -16,8 +16,12 @@ ActiveRecord::Schema.define(version: 2021_06_30_145545) do
     t.string "classe"
     t.integer "nbPlace"
     t.string "codeConfirmation"
+    t.integer "vol_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_registrations_on_user_id"
+    t.index ["vol_id"], name: "index_registrations_on_vol_id"
   end
 
   create_table "users", force: :cascade do |t|

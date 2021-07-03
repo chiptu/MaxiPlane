@@ -1,0 +1,29 @@
+<div style="
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  text-align: center;">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Code de la réservation</th>
+      <th scope="col">Nombre de place réservé</th>
+      <th scope="col">Classe</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @reservations.each do |reservation| %>
+      <tr>
+        <td scope="col"><%= reservation.codeConfirmation %></td>
+        <td scope="col"><%= reservation.nbPlace %></td>
+        <td scope="col"><%= reservation.classe %></td>
+        <td scope="col"><%= link_to 'Détails', booking_path(reservation.id) %></td>
+        <td scope="col"></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+</div>

@@ -17,7 +17,23 @@
                    new_user_confirmation GET    /users/confirmation/new(.:format)                                                                 devise/confirmations#new
                        user_confirmation GET    /users/confirmation(.:format)                                                                     devise/confirmations#show
                                          POST   /users/confirmation(.:format)                                                                     devise/confirmations#create
-                              home_index GET    /home/index(.:format)                                                                             home#index
+                                 flights GET    /flights(.:format)                                                                                flights#index
+                                         POST   /flights(.:format)                                                                                flights#create
+                              new_flight GET    /flights/new(.:format)                                                                            flights#new
+                             edit_flight GET    /flights/:id/edit(.:format)                                                                       flights#edit
+                                  flight GET    /flights/:id(.:format)                                                                            flights#show
+                                         PATCH  /flights/:id(.:format)                                                                            flights#update
+                                         PUT    /flights/:id(.:format)                                                                            flights#update
+                                         DELETE /flights/:id(.:format)                                                                            flights#destroy
+                                bookings GET    /bookings(.:format)                                                                               bookings#index
+                                         POST   /bookings(.:format)                                                                               bookings#create
+                             new_booking GET    /bookings/new(.:format)                                                                           bookings#new
+                            edit_booking GET    /bookings/:id/edit(.:format)                                                                      bookings#edit
+                                 booking GET    /bookings/:id(.:format)                                                                           bookings#show
+                                         PATCH  /bookings/:id(.:format)                                                                           bookings#update
+                                         PUT    /bookings/:id(.:format)                                                                           bookings#update
+                                         DELETE /bookings/:id(.:format)                                                                           bookings#destroy
+                                    root GET    /                                                                                                 home#index
                             home_private GET    /home/private(.:format)                                                                           home#private
            rails_postmark_inbound_emails POST   /rails/action_mailbox/postmark/inbound_emails(.:format)                                           action_mailbox/ingresses/postmark/inbound_emails#create
               rails_relay_inbound_emails POST   /rails/action_mailbox/relay/inbound_emails(.:format)                                              action_mailbox/ingresses/relay/inbound_emails#create

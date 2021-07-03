@@ -1,0 +1,26 @@
+<div style="width: 80em; margin: auto">
+  <h1> Vols disponibles </h1>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Aéroport de départ</th>
+      <th scope="col">Aéroport d'arrivé</th>
+      <th scope="col">Durée du vol (en min)</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @flights.each do |flight| %>
+      <tr>
+        <td scope="col"><%= flight.departureAirport %></td>
+        <td scope="col"><%= flight.arrivalAirport %></td>
+        <td scope="col"><%= flight.duration %></td>
+        <td scope="col"><%= link_to 'Détails', flight_path(flight.id) %></td>
+        <td scope="col"></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

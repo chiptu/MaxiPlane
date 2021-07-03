@@ -1,0 +1,31 @@
+<div style="
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  text-align: center;"
+>
+  <h1> Formulaire de réservation </h1>
+
+  <%= form_with url: "/bookings", method: :post do |form| %></br>
+    <%= form.hidden_field :vol_id, value: @flight.id %>
+    Aéroport de départ: </br>
+    <p> <%= @flight.departureAirport %></p></br>
+    Aéroport d'arrivé: </br>
+    <p> <%= @flight.arrivalAirport %></p></br>
+    Classe :</br>
+    <% if @option_select_class != [] %>
+      <%= select_tag(:classe, options_for_select(@option_select_class)) %></br></br>
+    <% else %>
+      Plus de place disponible </br>
+    <% end %>
+    Nombre de place:</br>
+    <%= number_field_tag(:nbPlace, value = 0, options = {min:1, max:99})  %>
+    </br>
+    </br>
+    <% if @flight.nbSeatsEco > 0 and @flight.nbSeatsPremium > 0 %>
+      <%= form.submit "Réserver" %>
+    <% else %>
+      Pas de réservation possible
+    <% end %>
+  <% end %>
+</div>

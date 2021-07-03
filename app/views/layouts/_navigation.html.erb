@@ -1,0 +1,20 @@
+<nav class="navbar navbar-dark bg-primary navbar-static-top navbar-expand-md justify-content-end ">
+    <a class="navbar-brand" href="/">MaxiPlane</a>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav mr-auto">
+        <li class='nav-item'><%= link_to 'Liste Vols', flights_path, class: 'nav-link' %></li>
+      </ul>
+    </div>
+      <ul class="navbar-nav ml-auto">
+        <% if user_signed_in? %>
+          <li class='nav-item'><%= link_to 'Mes Réservations', bookings_path, class: 'nav-link' %></li>
+        <% end %>
+        <li class='nav-item'>
+          <% if user_signed_in? %>
+            <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+          <% else %>
+            <%= link_to 'Se connecter', new_user_session_path, class: 'nav-link' %>
+          <%end %>
+        </li>
+      </ul>
+</nav>

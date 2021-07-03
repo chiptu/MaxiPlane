@@ -1,0 +1,23 @@
+<div style="
+margin: auto;
+  width: 50%;
+  padding: 10px;
+  text-align: center;"
+>
+  <h1> Réservation <%= @reservation.codeConfirmation %></h1>
+
+  <div style="padding: 10px;">
+    Départ depuis l'aéroport de <%= @flight.departureAirport %> vers l'aéroport de <%= @flight.arrivalAirport %>
+  </div>
+
+  <div style="padding: 10px;">
+    Heure de départ: <%= @flight.departureDate.strftime("%-d/%-m/%y: %H:%M %Z") %>
+    </br>
+    Heure d'arrivé: <%= (@flight.departureDate + @flight.duration.minutes).strftime("%-d/%-m/%y: %H:%M %Z") %>
+  </div >
+  <div style="padding: 10px;">
+    Classe : <%= @reservation.classe %></br>
+    Nombre de place réservé: <%= @reservation.nbPlace %>
+  </div>
+  <%= link_to 'Annuler la réservation', booking_path(@reservation.id, flight_id: @flight.id), :method => :delete, style: 'color: red' %>
+</div>
