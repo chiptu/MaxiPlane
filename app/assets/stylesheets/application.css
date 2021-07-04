@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+.avion {
+
+    background-size: cover;
+}
+a {
+    color:white !important;
+}

@@ -1,4 +1,4 @@
-<div style="width: 30em; margin: auto">
+<div class="" style="width: 30em; margin: auto">
   <h2>Log in</h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -20,7 +20,9 @@
     <% end %>
 
     <div class="actions">
+
       <%= f.submit "Log in" %>
+
     </div>
   <% end %>
 

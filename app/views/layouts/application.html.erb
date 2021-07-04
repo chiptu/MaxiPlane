@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="w-100 h-100 bg-secondary">
   <head>
     <title><%= content_for?(:title) ? yield(:title) : "MaxiPlane" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -10,10 +10,14 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="w-100 h-100 bg-secondary ">
+
     <header>
       <%= render 'layouts/navigation' %>
     </header>
+
+
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
