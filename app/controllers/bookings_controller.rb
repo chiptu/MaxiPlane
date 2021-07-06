@@ -33,6 +33,7 @@ class BookingsController < ApplicationController
   def create
     @flight = Vol.find(params[:vol_id])
     if params[:classe] == '1'
+      message="Erreur il manque des places dans la classe que vous avez choisi"
       if @flight.nbSeatsEco - params[:nbPlace].to_i >=0
         @reservation = Registration.create(
           classe: 'Eco',
@@ -43,7 +44,11 @@ class BookingsController < ApplicationController
         ).valid?
         @flight.nbSeatsEco -= params[:nbPlace].to_i
         @flight.save
+        message="La réservation a bien été enregistré"
       end
+
+
+
     elsif params[:classe] == '2'
       if @flight.nbSeatsPremium - params[:nbPlace].to_i >= 0
         @reservation = Registration.create(
@@ -55,9 +60,14 @@ class BookingsController < ApplicationController
         ).valid?
         @flight.nbSeatsPremium -= params[:nbPlace].to_i
         @flight.save
+        message="La réservation a bien été enregistré"
+
       end
+      else
+        message="Erreur il manque des places dans la classe que vous avez choisi"
+
     end
-    redirect_to flights_path , :alert => "La réservation a bien été enregistré"
+    redirect_to flights_path , :alert =>message
   end
 
   def show
