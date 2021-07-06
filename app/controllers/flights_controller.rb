@@ -1,6 +1,7 @@
 class FlightsController < ApplicationController
 
   def index
+
     @flights = Vol.all
   end
 

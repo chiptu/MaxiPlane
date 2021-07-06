@@ -17,9 +17,14 @@
     </header>
 
 
+    <% if alert %>
+    <p class="alert alert-danger text-danger text-center"><%= notice %></p>
+    <%end %>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if alert %>
+    <p class="alert alert-success text-success text-center"><%= alert %></p>
+    <%end %>
+
     <%= yield %>
   </body>
 </html>

@@ -18,6 +18,7 @@ class BookingsController < ApplicationController
           @option_select_class = []
         end
       end
+
     end
   end
 
@@ -56,7 +57,7 @@ class BookingsController < ApplicationController
         @flight.save
       end
     end
-    redirect_to flights_path
+    redirect_to flights_path , :alert => "La réservation a bien été enregistré"
   end
 
   def show

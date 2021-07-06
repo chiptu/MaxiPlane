@@ -17,10 +17,31 @@
         <td scope="col"><%= flight.departureAirport %></td>
         <td scope="col"><%= flight.arrivalAirport %></td>
         <td scope="col"><%= flight.duration %></td>
+        <td scope="col"><%= link_to 'Réserver', new_booking_path(flight_id: flight.id) %></td>
         <td scope="col"><%= link_to 'Détails', flight_path(flight.id) %></td>
         <td scope="col"></td>
+
+
       </tr>
+
     <% end %>
+
     </tbody>
   </table>
+
+  <nav aria-label="Page navigation example text-dark">
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link text-dark" href="#">Previous</a></li>
+      <li class="page-item"><a class="page-link text-dark" href="#">1</a></li>
+      <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
+      <li class="page-item"><a class="page-link text-dark" href="#">3</a></li>
+      <li class="page-item"><a class="page-link text-dark" href="#">Next</a></li>
+    </ul>
+  </nav>
+
+
+
+
+
+
 </div>
