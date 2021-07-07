@@ -2,7 +2,7 @@ class FlightsController < ApplicationController
 
   def index
 
-    @flights = Vol.all
+    @flights = Vol.where('departureDate >= ?', DateTime.now)
   end
 
   def show
