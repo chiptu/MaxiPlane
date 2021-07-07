@@ -4,9 +4,11 @@
   <table class="table">
     <thead>
     <tr class="text-light">
+      <th scope="col">Identifiant du vol</th>
       <th scope="col">Aéroport de départ</th>
       <th scope="col">Aéroport d'arrivé</th>
-      <th scope="col">Durée du vol (en min)</th>
+      <th scope="col">Heure de départ<th>
+      <th scope="col">Durée du vol (min)</th>
       <th scope="col"></th>
       <th scope="col"></th>
     </tr>
@@ -14,13 +16,13 @@
     <tbody>
     <% @flights.each do |flight| %>
       <tr>
+        <td scope="col"><%= flight.number %></td>
         <td scope="col"><%= flight.departureAirport %></td>
         <td scope="col"><%= flight.arrivalAirport %></td>
+        <td scope="col"><%= flight.departureDate %></td>
         <td scope="col"><%= flight.duration %></td>
         <td scope="col"><%= link_to 'Réserver', new_booking_path(flight_id: flight.id) %></td>
         <td scope="col"><%= link_to 'Détails', flight_path(flight.id) %></td>
-        <td scope="col"></td>
-
 
       </tr>
 
@@ -29,7 +31,7 @@
     </tbody>
   </table>
 
-  <nav aria-label="Page navigation example text-dark">
+  <nav aria-label=" text-dark"> <!-- (-; -->
     <ul class="pagination">
       <li class="page-item"><a class="page-link text-dark" href="#">Previous</a></li>
       <li class="page-item"><a class="page-link text-dark" href="#">1</a></li>

@@ -13,7 +13,7 @@
   <div style="padding: 10px;">
     Heure de départ: <%= @flight.departureDate.strftime("%-d/%-m/%y: %H:%M %Z") %>
     </br>
-    Heure d'arrivé: <%= (@flight.departureDate + @flight.duration.minutes).strftime("%-d/%-m/%y: %H:%M %Z") %>
+    Heure d'arrivée: <%= (@flight.departureDate + @flight.duration.minutes).strftime("%-d/%-m/%y: %H:%M %Z") %>
   </div>
   <%= link_to 'Réserver', new_booking_path(flight_id: @flight.id) %>
 </div>
