@@ -1,8 +1,9 @@
 class BookingsController < ApplicationController
+  before_action :authenticate_user!
 
   def new
     if !user_signed_in?
-      redirect_to new_user_session_path and return
+
     else
       @flight = Vol.find(params[:flight_id])
       if @flight.nbSeatsEco > 0
@@ -24,7 +25,7 @@ class BookingsController < ApplicationController
 
   def index
     if !user_signed_in?
-      redirect_to new_user_session_path and return
+
     else
       @reservations = Registration.where(user_id: current_user.id)
     end
