@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hello <%= @user.username %></h1>
+    <p>
+      We acknowledge receipt of your reservation, made on our site.<br>
+    </p>
+    <p>
+      We remind you of the terms of our agreement. Your departure will be <%= @vol.departureDate %>, at the airport / station <%= @vol.departureAirport %>.
+    </p>
+    <p>Thanks for your trust !</p>
+  </body>
+</html>

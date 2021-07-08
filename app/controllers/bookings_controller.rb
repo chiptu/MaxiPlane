@@ -41,14 +41,12 @@ class BookingsController < ApplicationController
           codeConfirmation: SecureRandom.hex(6),
           vol_id: params[:vol_id],
           user_id: current_user.id
-        ).valid?
+        )
+        BookingMailer.with(user: current_user, booking: @reservation).booking_email.deliver_now
         @flight.nbSeatsEco -= params[:nbPlace].to_i
         @flight.save
         message="La réservation a bien été enregistré"
       end
-
-
-
     elsif params[:classe] == '2'
       if @flight.nbSeatsPremium - params[:nbPlace].to_i >= 0
         @reservation = Registration.create(
@@ -57,15 +55,14 @@ class BookingsController < ApplicationController
           codeConfirmation: SecureRandom.hex(6),
           vol_id: params[:vol_id],
           user_id: current_user.id
-        ).valid?
+        )
+        BookingMailer.with(user: current_user, booking: @reservation).booking_email.deliver_now
         @flight.nbSeatsPremium -= params[:nbPlace].to_i
         @flight.save
         message="La réservation a bien été enregistré"
-
       end
       else
         message="Erreur il manque des places dans la classe que vous avez choisi"
-
     end
     redirect_to flights_path , :alert =>message
   end
